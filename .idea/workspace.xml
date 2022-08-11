@@ -4,39 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3462ed1b-2b38-477d-b54a-a978cbb407f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhou/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zhou/controller/RouterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/qinjiang/css/qinstyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/qinjiang/js/jquery-3.1.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/qinjiang/js/semantic.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/qinjiang/用于安全.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index_security.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level1/1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level1/2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level1/3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level1/4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level2/1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level2/2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level2/3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level3/1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level3/2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/level3/3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/views/用于安全.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="3462ed1b-2b38-477d-b54a-a978cbb407f9" name="Changes" comment="开始1">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-Helloworld.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot-Helloworld.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhou/controller/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhou/controller/DepartmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhou/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhou/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhou/config/DruidConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhou/config/DruidConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhou/config/LoginHandlerInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhou/config/LoginHandlerInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhou/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhou/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhou/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhou/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zhou/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhou/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zhou/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zhou/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/commons/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/commons/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zhou/SpringbootHelloworldApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zhou/SpringbootHelloworldApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zhou/config/MvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhou/config/MvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zhou/controller/EmployeeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhou/controller/EmployeeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/zhou/controller/JDBCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhou/controller/JDBCController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zhou/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zhou/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/commons/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/commons/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/zhou/SpringbootHelloworldApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/zhou/SpringbootHelloworldApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +78,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../employee" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/user" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -98,6 +90,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\zhou-idea-java\springboot-Helloworld2\src\main\resources\templates\user" />
       <recent name="F:\zhou-idea-java\springboot-Helloworld\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -146,6 +139,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpringbootHelloworldApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="springboot-Helloworld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhou" />
+      <option name="MAIN_CLASS_NAME" value="com.zhou.SpringbootHelloworldApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SpringbootHelloworldApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="springboot-Helloworld" />
       <extension name="coverage">
@@ -163,6 +172,7 @@
       <list>
         <item itemvalue="Spring Boot.SpringbootHelloworldApplication" />
         <item itemvalue="JUnit.SpringbootHelloworldApplicationTests" />
+        <item itemvalue="JUnit.SpringbootHelloworldApplicationTests.contextLoads" />
         <item itemvalue="Application.fun" />
         <item itemvalue="JUnit.All in springboot-Helloworld" />
       </list>
@@ -204,7 +214,7 @@
       <workItem from="1660039641224" duration="2217000" />
       <workItem from="1660095349811" duration="7979000" />
       <workItem from="1660117606338" duration="2963000" />
-      <workItem from="1660181795238" duration="439000" />
+      <workItem from="1660181795238" duration="18465000" />
     </task>
     <task id="LOCAL-00001" summary="111">
       <created>1659007327912</created>
@@ -241,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659692106320</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="8-11">
+      <created>1660182392497</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1660182392497</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +268,8 @@
     <MESSAGE value="111" />
     <MESSAGE value="8/2" />
     <MESSAGE value="开始1" />
-    <option name="LAST_COMMIT_MESSAGE" value="开始1" />
+    <MESSAGE value="8-11" />
+    <option name="LAST_COMMIT_MESSAGE" value="8-11" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

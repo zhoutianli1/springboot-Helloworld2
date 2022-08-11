@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-//AOP面向切面编程 ： 作为拦截器功能，这里和之前congig中写的的 LoginHandlerInterceptor功能冲突
+//AOP面向切面编程 ： 作为拦截器功能，这里和之前congig中写的的 LoginHandlerInterceptor功能冲突    https://blog.csdn.net/weixin_44502804/article/details/93139550
 @EnableWebSecurity //security配置类
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
@@ -15,7 +15,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception
     {
         //功能：首页所有人都可以访问， 功能页面只能对应有权限的人可以访问
-        //请求授权规则
+        //请求授权规则，这里的权限指的是 vip123，
         http.authorizeHttpRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/level1/**").hasRole("vip1")
@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //认证用户的角色信息
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        //下面这两行配置表示在内存中配置了两个用户，也可以在jdbc数据库中认证 用户
+        //下面这两行配置表示在内存中配置了两个用户，也可以在jdbc数据库中认证 用户  。如何在数据库认证权限
         auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
                 .withUser("root").roles("vip1","vip2","vip3").password(new BCryptPasswordEncoder().encode("123456"))
                 .and()

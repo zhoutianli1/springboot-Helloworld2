@@ -10,14 +10,13 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
-//扩展springmvc
-//
+//扩展springmvc,关于首页的默认访问路径
+
 public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");          //关于首页的默认访问路径
-        registry.addViewController("/index.html").setViewName("index");
 
         registry.addViewController("/main.html").setViewName("dashboard");
     }

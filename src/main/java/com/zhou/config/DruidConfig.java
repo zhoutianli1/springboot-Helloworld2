@@ -14,11 +14,11 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 
-//#这里使用的不是starter，不会自动装配，需要手动写一个配置类
-// # 如果导入的是starter启动器，这里可以直接使用 druid: 进行配置;这边用druid-spring-boot-starter好些
+//#这里使用的不是druid-spring-boot-starter，不会自动装配，需要手动写一个配置类
+// # 如果导入的是starter启动器，这里可以直接使用 druid: 进行配置;   这边用druid-spring-boot-starter好些
 @Configuration
 public class DruidConfig {
-    @ConfigurationProperties(prefix = "spring.datasource")
+    @ConfigurationProperties(prefix = "spring.datasource")   //绑定yml
     @Bean
     public DataSource druidDataSource()
     {
@@ -27,7 +27,7 @@ public class DruidConfig {
 
 
     //Druid有后台监控功能 过去配置在web.xml
-    //德鲁伊后台监控是需要配置servlet的，这里就是springboot注册servlet的方式，很清晰呀。现在注入到容器，配置类
+    //德鲁伊后台监控是需要配置servlet的，这里就是springboot注册servlet的方式。现在注入到容器，配置类
     @Bean
     public ServletRegistrationBean statViewServlet()
     {
@@ -46,14 +46,14 @@ public class DruidConfig {
         //Ze
         return bean;
     }
-    //filter
+    //filter，用处不大 ，Filter 通过它可以开启 Druid 的 SQL 监控 功能，对 SQL 进行 监控
     @Bean
     public FilterRegistrationBean webStatFilter()
     {
 
          FilterRegistrationBean bean = new FilterRegistrationBean();
          bean.setFilter(new WebStatFilter());
-         //可以过滤的请求
+         //可以过滤的请求，不对这些请求监控
         Map<String,String> initParameters = new HashMap<>();
         initParameters.put("exclusion","*.js,*.css,/druid/*");
         bean.setInitParameters(initParameters);

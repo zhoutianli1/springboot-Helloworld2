@@ -13,7 +13,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor{ //拦截器�
     //登陆拦截器
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception
     {
-        //登陆成功后有用户的session
+        //登陆成功后 ,用户的session
         Object loginUser = request.getSession().getAttribute("loginUser");
 
         if(loginUser==null) //没有登陆

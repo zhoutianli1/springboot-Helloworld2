@@ -19,11 +19,11 @@ class SpringbootHelloworldApplicationTests {
         System.out.println("目前连接的数据源是："+dataSource.getClass());    //DataSourceConfi... 中有4个数据源，默认是Hikiar, 在yml中用type去更改配置
         //查看数据库连接
         Connection connection =  dataSource.getConnection();
-        System.out.println(connection);
+        System.out.println("查看数据库连接是：理论上公司这里没有连接数据库"+connection);
         //拿到数据库连接，就可以进行 CURD操作
 
-        //xxxTemplate :是springboot已经配置好的模板bean，  如有jdbc  redis
-
+        //xxxTemplate :是springboot已经配置好的模板bean，  如有jdbcTemplate（里面封装这curd方法）  redis.
+        //若配置了jdbc驱动，可以使用 springboot中的 jdbcTemplate这个bean
         //关闭
         connection.close();
     }
