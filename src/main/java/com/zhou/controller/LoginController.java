@@ -17,7 +17,7 @@ public class LoginController {
 
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, Model model, HttpSession session)
     {
-        //业务
+        //业务   用户名任意 ；密码123456
         if(!StringUtils.isEmpty(username)&& "123456".equals(password))
         {
             //登陆时拿到用户session

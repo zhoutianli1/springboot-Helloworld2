@@ -17,6 +17,8 @@ import javax.servlet.http.HttpSession;
 import java.security.SecureRandom;
 import java.util.Collection;
 //显示员工列表 跳转到emp/list.html
+//　RestController = Controller + ResponseBody，例如在项目当中，你加上的是RestController,那么返回的内容是你return中的内容，如果是return "Hello World"，页面显示的就是Hello World。
+// 但是如果你加上Controller，返回的是return中对应的页面,比如return “hello”,页面的名称是hello，此时如果你的项目中没有hello这个页面，那么必然会出现404的错误，
 @Controller
 public class EmployeeController {
     @Autowired

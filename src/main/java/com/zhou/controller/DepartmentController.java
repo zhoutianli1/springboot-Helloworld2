@@ -25,7 +25,7 @@ public class DepartmentController {
         return "dep/list";
     }
     //添加类型==================================================================
-    @GetMapping ("dep/add")
+    @RequestMapping ("dep/toAdd")
     //在部门列表页面点击添加，去添加部门类型页面
     public String toAddDepPage()
     {
