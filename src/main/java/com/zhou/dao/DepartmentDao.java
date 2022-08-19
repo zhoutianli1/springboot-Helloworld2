@@ -10,6 +10,7 @@ import java.util.Map;
 
 @Repository
 public class DepartmentDao {
+
     //模拟数据库中的数据,字典，键值对
     private static Map<Integer, Department> departments=null;
     static    //放在static 初始化 数据就加载

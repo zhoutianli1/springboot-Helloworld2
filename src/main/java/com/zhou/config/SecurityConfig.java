@@ -1,7 +1,7 @@
 package com.zhou.config;
 
 
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import  org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -29,6 +29,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         //开启记住我功能   实现了cookie，默认保存2周
         http.rememberMe();
+
+        //rememberMe	允许配置“记住我”的验证
+        //logout()	添加退出登录支持。当使用WebSecurityConfigurerAdapter时，这将自动应用。
+        //默认情况是，访问URL”/ logout”，使HTTP Session无效来清除用户，清除已配置的任何#rememberMe()身份验证，清除SecurityContextHolder，然后重定向到”/login?success”
+        //authorizeRequests()	允许基于使用HttpServletRequest限制访问
+        //所有接口都不需要权限认证
+        //http.authorizeRequests().antMatchers("/**").permitAll();
+        //所有接口都需要权限认证
+        //http.authorizeRequests().antMatchers("/**").authenticated();
+        ////只有以test开头的接口需要进行权限认证
+        //http.authorizeRequests().antMatchers("/test/**").authenticated();
+
+
+
     }
 
     //默认情况下，登录的用户名是 user ，密码则是项目启动时随机生成的字符串，可以从启动的控制台日志中看到默认密码

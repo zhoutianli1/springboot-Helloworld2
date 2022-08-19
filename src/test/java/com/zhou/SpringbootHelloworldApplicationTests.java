@@ -1,5 +1,6 @@
 package com.zhou;
 
+import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +11,8 @@ import java.sql.SQLException;
 
 @SpringBootTest
 class SpringbootHelloworldApplicationTests {
+
+    static Logger logger = Logger.getLogger(SpringbootHelloworldApplicationTests.class);
     //加了mysql驱动，配置了连接数据库yml，自动生成相应对象
     @Autowired
     DataSource dataSource;
@@ -28,4 +31,11 @@ class SpringbootHelloworldApplicationTests {
         connection.close();
     }
 
+    @Test
+    public void Log4j()
+    {
+        logger.info("info:");
+        logger.debug("debug");
+        logger.error("error");
+    }
 }

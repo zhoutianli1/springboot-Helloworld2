@@ -24,7 +24,7 @@
             <version>2.2.1</version>
         </dependency>
 
-        <!--log4j-->
+        <!--log4j 日志工厂，提供方便的日志记录-->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -81,7 +81,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <!-- 是否要单元测试-->
+
 
     </dependencies>
 

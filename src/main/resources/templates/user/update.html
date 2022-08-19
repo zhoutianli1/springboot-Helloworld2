@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,32 +55,45 @@
 				<!--侧边栏结束-->
 
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-					<h2><a class="btn-sm btn-success" th:href="@{/userAdd}">添加员工</a></h2>
-					<div class="table-responsive">
-						<table class="table table-striped table-sm">
-							<thead> <!-- 表头-->
-								<tr>
-									<th>id</th>
-									<th>Name</th>
-									<th>pwd</th>
-								</tr>
-							</thead>
+					<!--放置from表单,用来添加雇员-->
+					<div> 更新</div>
 
-							<tbody> <!-- 表的身体-->
-								<tr th:each="user:${userList}">
-									<td th:text="${user.getId()}"></td>
-									<td>[[${user.getname()}]]</td>
-									<td>[[${user.getpwd()}]]</td>
+					<form th:action="@{/empUpdate}" method="post">
+						<input type="hidden" name="id" th:value="${employee.getId}">
+						<div class="form-group">
+							<label>LastName</label>
+							<input th:value="${employee.getLastName()}" type="text"  name="lastName" class="form-control" placeholder="海绵宝宝">
+						</div>
+						<div class="form-group">
+							<label>Email</label>
+							<input th:value="${employee.getEmail()}" type="email" name="email" class="form-control" placeholder="1176244270@qq.com">
+						</div>
+						<div class="form-group">
+							<label>Gender</label><br>
+							<div class="form-check form-check-inline">
+								<input th:checked="${employee.getGender()==1}" class="form-check-input" type="radio" name="gender" value="1">
+								<label class="form-check-label">男</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input th:checked="${employee.getGender()==0}" class="form-check-input" type="radio" name="gender" value="0">
+								<label class="form-check-label">女</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>department</label>
+							<!-- 我们在EmployeeController接受的是一个Emlpoyee，这里需要提交的是其中一个属性department.id，而不是department对象-->
+							<select class="form-control" name="department.id">
+								<option th:selected="${dept.getId()==employee.getDepartment().getId()}" th:each="dept:${departments}" th:text="${dept.getDepartmentName()}" th:value="${dept.getId()}"></option>
 
-									<td>
-										<a class="btn-sm btn-success" th:href="@{/userUpdate/}+${user.getName()}">修改信息</a>
-										<a class="btn-sm btn-success" th:href="@{/userDel/}+${user.getName()}">删除用户</a>
-									</td>
-								</tr>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Birth</label>
+							<input th:value="${#dates.format(employee.getBirth(),'yyyy/MM/dd HH:mm:ss')}" type="text" name="birth" class="form-control" placeholder="嘤嘤嘤">
+						</div>
+						<button type="submit" class="btn btn-primary">确认修改</button>
+					</form>
 
-							</tbody>
-						</table>
-					</div>
 				</main>
 			</div>
 		</div>

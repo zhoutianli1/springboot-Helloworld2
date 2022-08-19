@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,32 +55,20 @@
 				<!--侧边栏结束-->
 
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-					<h2><a class="btn-sm btn-success" th:href="@{/userAdd}">添加员工</a></h2>
-					<div class="table-responsive">
-						<table class="table table-striped table-sm">
-							<thead> <!-- 表头-->
-								<tr>
-									<th>id</th>
-									<th>Name</th>
-									<th>pwd</th>
-								</tr>
-							</thead>
+					<!--放置from表单,用来添加用户-->
+					<form th:action="@{/userAdd}" method="post">
+						<div class="form-group">
+							<label>Name</label>
+							<input  type="text"  name="name" class="form-control" placeholder="海绵宝宝">
+						</div>
+						<div class="form-group">
+							<label>pwd</label>
+							<input  type="text"  name="pwd" class="form-control" placeholder="123456">
+						</div>
 
-							<tbody> <!-- 表的身体-->
-								<tr th:each="user:${userList}">
-									<td th:text="${user.getId()}"></td>
-									<td>[[${user.getname()}]]</td>
-									<td>[[${user.getpwd()}]]</td>
+						<button type="submit" class="btn btn-primary">添加</button>
+					</form>
 
-									<td>
-										<a class="btn-sm btn-success" th:href="@{/userUpdate/}+${user.getName()}">修改信息</a>
-										<a class="btn-sm btn-success" th:href="@{/userDel/}+${user.getName()}">删除用户</a>
-									</td>
-								</tr>
-
-							</tbody>
-						</table>
-					</div>
 				</main>
 			</div>
 		</div>
