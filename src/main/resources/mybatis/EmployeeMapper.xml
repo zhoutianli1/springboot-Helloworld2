@@ -5,23 +5,23 @@
 <!-- -->
 <mapper namespace="com.zhou.mapper.EmployeeMapper">
     <select id="getEmployeeList" resultType="Employee">
-        select * from Employee;
+        select * from mybatis.employee;
     </select>
 
     <select id="getEmployeeById" resultType="Employee">
-        select * from Employee where id = #{id};
+        select * from mybatis.employee where id = #{id};
     </select>
 
     <insert id="addEmployee" parameterType="Employee">
-        insert into mybatis.Department(id, Employee) VALUES (#{id},#{Employee});
+        insert into mybatis.employee(lastName, email, gender, departmentId, birth) VALUES (#{lastName},#{email},#{gender},#{departmentId},#{ birth});
     </insert>
 
     <update id="updateEmployee" parameterType="Employee">
-        update Department set DepartmentName=#{DepartmentName} where id = #{id};
+        update mybatis.employee set lastName=#{lastName},email=#{email},gender=#{gender},departmentId=#{departmentId},birth=#{birth} where id = #{id};
     </update>
 
     <delete id="deleteEmployee" parameterType="int">
-        delete from Department where id = #{id};
+        delete from mybatis.employee where id = #{id};
     </delete>
 
 </mapper>

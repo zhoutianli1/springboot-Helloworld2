@@ -57,6 +57,7 @@ public class DruidConfig {
         Map<String,String> initParameters = new HashMap<>();
         initParameters.put("exclusion","*.js,*.css,/druid/*");
         bean.setInitParameters(initParameters);
+        System.out.println("开启sql监控功能");
          return bean;
 
     }

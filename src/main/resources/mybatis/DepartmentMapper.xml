@@ -5,11 +5,11 @@
 <!-- -->
 <mapper namespace="com.zhou.mapper.DepartmentMapper">
     <select id="getDepartmentsList" resultType="Department">
-        select * from Department;
+        select * from mybatis.department;
     </select>
 
     <select id="getDepartmentById" resultType="Department">
-        select * from Department where id = #{id};
+        select * from mybatis.department where id = #{id};
     </select>
 
     <insert id="addDepartment" parameterType="Department">
@@ -17,11 +17,11 @@
     </insert>
 
     <update id="updateDepartment" parameterType="Department">
-        update Department set DepartmentName=#{DepartmentName} where id = #{id};
+        update mybatis.department set DepartmentName=#{DepartmentName} where id = #{id};
     </update>
 
     <delete id="deleteUser" parameterType="int">
-        delete from Department where id = #{id};
+        delete from mybatis.department where id = #{id};
     </delete>
 
 </mapper>

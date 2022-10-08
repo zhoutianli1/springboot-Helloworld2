@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="Thymeleaf" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -59,20 +59,20 @@
 							<thead> <!-- 表头-->
 								<tr>
 									<th>id</th>
-									<th>Name</th>
+									<th>name</th>
 									<th>pwd</th>
 								</tr>
 							</thead>
 
 							<tbody> <!-- 表的身体-->
 								<tr th:each="user:${userList}">
-									<td th:text="${user.getId()}"></td>
-									<td>[[${user.getname()}]]</td>
-									<td>[[${user.getpwd()}]]</td>
+									<td th:text="${user.getId()}"> </td>
+									<td th:text="${user.getName()}"> </td>
+									<td>[[${user.getPwd()}]]</td>
 
 									<td>
-										<a class="btn-sm btn-success" th:href="@{/userUpdate/}+${user.getName()}">修改信息</a>
-										<a class="btn-sm btn-success" th:href="@{/userDel/}+${user.getName()}">删除用户</a>
+										<a  class="btn-sm btn-success" th:href="@{/userUpdate/}+${user.getId()}">修改信息</a>
+										<a class="btn-sm btn-success" th:href="@{/userDel/}+${user.getId()}">删除用户</a>
 									</td>
 								</tr>
 

@@ -60,6 +60,7 @@
 
 					<form th:action="@{/empUpdate}" method="post">
 						<input type="hidden" name="id" th:value="${employee.getId}">
+
 						<div class="form-group">
 							<label>LastName</label>
 							<input th:value="${employee.getLastName()}" type="text"  name="lastName" class="form-control" placeholder="海绵宝宝">
@@ -80,10 +81,13 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label>department</label>
+							<label>departmentName</label>
 							<!-- 我们在EmployeeController接受的是一个Emlpoyee，这里需要提交的是其中一个属性department.id，而不是department对象-->
-							<select class="form-control" name="department.id">
-								<option th:selected="${dept.getId()==employee.getDepartment().getId()}" th:each="dept:${departments}" th:text="${dept.getDepartmentName()}" th:value="${dept.getId()}"></option>
+							<select class="form-control" name="departmentId">
+								<option  th:selected="${dept.getId()==employee.getDepartmentId()}" th:each="dept:${departments}" th:text="${dept.getDepartmentName()}" th:value="${dept.getId()}"></option>
+								<!--  下拉框 th:selected="${dept.id == emp.department.id}" selected属性的意思是“选中当select标签的默认数据”我们通过表达式来判断ID是否相等，如果相等了，那么这条数据就是select这个标签中的默认数据。
+
+-->
 
 							</select>
 						</div>

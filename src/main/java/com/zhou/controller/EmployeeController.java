@@ -1,7 +1,8 @@
 package com.zhou.controller;
 
-import com.zhou.dao.DepartmentDao;
-import com.zhou.dao.EmployeeDao;
+
+import com.zhou.mapper.DepartmentMapper;
+import com.zhou.mapper.EmployeeMapper;
 import com.zhou.pojo.Department;
 import com.zhou.pojo.Employee;
 
@@ -22,13 +23,17 @@ import java.util.Collection;
 @Controller
 public class EmployeeController {
     @Autowired
-    EmployeeDao employeeDao;
+    EmployeeMapper employeeMapper;
     @Autowired
-    DepartmentDao departmentDao;
+    DepartmentMapper departmentMapper;
     @RequestMapping("/empList")
     public String list(Model model)
     {
-        Collection<Employee> employees=employeeDao.getAll();
+        //要在添加之前拿到所有部门的信息
+        Collection<Department> departments = departmentMapper.getDepartmentsList();
+        model.addAttribute("departments",departments);
+        //拿到所有员工信息
+        Collection<Employee> employees=employeeMapper.getEmployeeList();
         model.addAttribute("employees",employees);
         System.out.println(employees);
         return "emp/list";
@@ -40,7 +45,7 @@ public class EmployeeController {
         //	<label>department</label>
         //	<select class="form-control" name="department.id">
         //要在添加之前拿到所有部门的信息
-        Collection<Department> departments = departmentDao.getDepartments();
+        Collection<Department> departments = departmentMapper.getDepartmentsList();
         model.addAttribute("departments",departments);
         return "emp/add";
     }
@@ -50,7 +55,7 @@ public class EmployeeController {
     {
         //将添加的员工保存数据到数据库，   add.html框架自动封装了Employee对象，只要属性名一样
         System.out.println("save=>employee");
-        employeeDao.save(employee);
+        employeeMapper.addEmployee(employee);
         return "redirect:/empList";
     }
 
@@ -59,11 +64,11 @@ public class EmployeeController {
      public String toUpdateEmp(@PathVariable("id") Integer id,Model model)
      {
          //在修改之前得先查出待修改员工的数据
-         Employee employee= employeeDao.getEmployeeById(id);  //一个员工数据
+         Employee employee= employeeMapper.getEmployeeById(id);  //一个员工数据
          model.addAttribute("employee",employee);
 
          //要在之前拿到所有部门的信息
-         Collection<Department> departments = departmentDao.getDepartments();
+         Collection<Department> departments = departmentMapper.getDepartmentsList();
          model.addAttribute("departments",departments);
          return "emp/update";
      }
@@ -71,7 +76,7 @@ public class EmployeeController {
      @PostMapping("/empUpdate")
      public String updateEmp(Employee employee)
      {
-         employeeDao.save(employee);
+         employeeMapper.updateEmployee(employee);
 
          return "redirect:/empList";
      }
@@ -81,15 +86,9 @@ public class EmployeeController {
     public String delEmp(@PathVariable("id") Integer id)
     {
 
-        employeeDao.delete(id);  //一个员工数据
+        employeeMapper.deleteEmployee(id);  //一个员工数据
 
         return "redirect:/empList";
     }
-    //退出登录(删除用户session）
-    @RequestMapping("/user/logout")
-    public String logout(HttpSession session)
-    {
-        session.invalidate();
-        return "redirect:/index.html";
-    }
+
 }

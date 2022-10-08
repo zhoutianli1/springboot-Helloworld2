@@ -5,23 +5,26 @@
 <!-- -->
 <mapper namespace="com.zhou.mapper.UserMapper">
     <select id="queryUserList" resultType="User">
-        select * from user;
+        select * from mybatis.user
     </select>
 
     <select id="queryUserById" resultType="User">
-        select * from user where id = #{id};
+        select * from mybatis.user where id = #{id};
+    </select>
+    <select id="queryUserByName" resultType="User">
+        select * from mybatis.user where name = #{name};
     </select>
 
     <insert id="addUser" parameterType="User">
-        insert into mybatis.user(id, name, pwd) VALUES (#{id},#{name},#{pwd});
+        insert into mybatis.user(name, pwd) VALUES (#{name},#{pwd});
     </insert>
 
     <update id="updateUser" parameterType="User">
-        update user set name = #{name},pwd=#{pwd} where id = #{id};
+        update mybatis.user set name = #{name},pwd=#{pwd} where id = #{id};
     </update>
 
     <delete id="deleteUser" parameterType="int">
-        delete from user where id = #{id};
+        delete from mybatis.user where id = #{id};
     </delete>
 
 </mapper>

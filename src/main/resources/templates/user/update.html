@@ -58,39 +58,18 @@
 					<!--放置from表单,用来添加雇员-->
 					<div> 更新</div>
 
-					<form th:action="@{/empUpdate}" method="post">
-						<input type="hidden" name="id" th:value="${employee.getId}">
+					<form th:action="@{/userUpdate}" method="post">
+						<input type="hidden" name="id" th:value="${user.getId}">
 						<div class="form-group">
-							<label>LastName</label>
-							<input th:value="${employee.getLastName()}" type="text"  name="lastName" class="form-control" placeholder="海绵宝宝">
+							<label>Name</label>
+							<input th:value="${user.getName()}" type="text"  name="name" class="form-control" placeholder="海绵宝宝">
 						</div>
-						<div class="form-group">
-							<label>Email</label>
-							<input th:value="${employee.getEmail()}" type="email" name="email" class="form-control" placeholder="1176244270@qq.com">
-						</div>
-						<div class="form-group">
-							<label>Gender</label><br>
-							<div class="form-check form-check-inline">
-								<input th:checked="${employee.getGender()==1}" class="form-check-input" type="radio" name="gender" value="1">
-								<label class="form-check-label">男</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input th:checked="${employee.getGender()==0}" class="form-check-input" type="radio" name="gender" value="0">
-								<label class="form-check-label">女</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>department</label>
-							<!-- 我们在EmployeeController接受的是一个Emlpoyee，这里需要提交的是其中一个属性department.id，而不是department对象-->
-							<select class="form-control" name="department.id">
-								<option th:selected="${dept.getId()==employee.getDepartment().getId()}" th:each="dept:${departments}" th:text="${dept.getDepartmentName()}" th:value="${dept.getId()}"></option>
 
-							</select>
-						</div>
 						<div class="form-group">
-							<label>Birth</label>
-							<input th:value="${#dates.format(employee.getBirth(),'yyyy/MM/dd HH:mm:ss')}" type="text" name="birth" class="form-control" placeholder="嘤嘤嘤">
+							<label>Pwd</label>
+							<input th:value="${user.getPwd()}" type="text"  name="pwd" class="form-control" placeholder="海绵宝宝">
 						</div>
+
 						<button type="submit" class="btn btn-primary">确认修改</button>
 					</form>
 

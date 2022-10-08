@@ -14,15 +14,15 @@ public class Employee {
     private  String lastName;
     private String email;
     private  Integer gender;
-    private Department department;
+    private Integer departmentId;
     private Date birth;
 
-    public Employee(Integer id, String lastName, String email, Integer gender, Department department) {
+    public Employee(Integer id, String lastName, String email, Integer gender, Integer departmentId) {
         this.id = id;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
-        this.department = department;
+        this.departmentId = departmentId;
 
         //默认创建日期，创建日期默认创建，生日手动在前台填表单。
         this.birth = new Date(); //new Date(）为现在时间

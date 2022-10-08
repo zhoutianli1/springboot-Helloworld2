@@ -22,6 +22,7 @@ public interface UserMapper {
     List<User> queryUserList();
 
     User queryUserById(int id);
+    User queryUserByName(String name);
 //存
     int addUser(User user);
 
